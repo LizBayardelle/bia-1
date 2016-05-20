@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :bootsy_image_gallery_id)
   end
 
   def authorize_user
