@@ -1,0 +1,35 @@
+<div class="row full-bg-img-0000">
+
+  <div class="row" style="height: 125px"></div>
+
+  <!--Section: Detailed info-->
+  <div class="container col-xs-10 col-xs-push-1 col-md-8 col-md-push-2" style="margin-bottom: 50px">
+    <div class="card-panel hoverable" style="background-color: rgba(255, 255, 255, .97)">
+
+      <div class="text-center">
+        <h1><%= @post.title %></h1>
+        <% if current_user.admin? %>
+          <%= link_to 'Edit Post', edit_post_path(@post) %> | <%= link_to 'Back to Index', posts_path %>
+        <% end %>
+      </div>
+
+      <p id="notice" class="red"><%= notice %></p>
+      <p><strong><%= simple_format(@post.teaser) %></strong></p>
+      <hr>
+      <p><%= simple_format(@post.body) %></p>
+      <h5>By: <%= @post.user.first_name %></h5>
+
+      <%= link_to "Back to the List o' Blogs", posts_path %>
+
+      <div id="comments_section">
+        <h4><%= @post.comments.count %> Comments</h4>
+          <%= render @post.comments %>
+
+        <% if current_user %>
+          <%= render 'comments/form', comment: Comment.new, post: @post %>
+        <% end %>
+      </div> <!-- comments section -->
+    </div> <!-- card-panel hoverable -->
+  </div> <!-- containter -->
+
+</div> <!-- row container -->

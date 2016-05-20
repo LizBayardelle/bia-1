@@ -1,0 +1,38 @@
+
+
+<div class="row container full-bg-img-003" style="min-height: 500px">
+
+<div class="row" style="height: 125px"></div>
+
+<% if current_user != nil && current_user.admin? %>
+  <div class="text-center"><%= link_to 'Create New Workout', new_workout_path, class:"waves-effect waves-light btn btn-primary" %></div>
+<% end %>
+
+<div class="row" style="height: 25px"></div>
+
+  <div class="container col-sm-6 col-sm-push-6">
+    <div class="card hoverable" style="padding-bottom: 20px; padding-top: 10px; margin-bottom: 50px; background-color: rgba(255, 255, 255, .85)">
+      <div class="container col-sm-12">
+        <h4 class="text-center">This is it.</h4>
+          <p class="text-center">You've found your way to the inner sanctum of the BurnIt universe.  Here lie all the workouts we have to offer. Use them wisely, young grasshopper.</p>
+      </div> <!-- container inside -->
+    </div>  <!-- card panel end -->
+  </div> <!-- column container -->
+
+<div class="row" style="height: 125px"> </div>
+
+</div> <!-- row -->
+
+<!--Section: Detailed info-->
+<section id="sec-details"><div class="container">
+  <div class="row">
+    <h2 class="text-center">Workouts Database</h2><hr>
+
+    <!--Image Cards Go Here-->
+    <% @workouts.each do |w| %>
+    <%= render "workouts/template", workout: w %>
+    <% end %>
+    <!--Image Cards End Here-->
+
+  </div> <!-- row -->
+</div> <!-- container --></section>

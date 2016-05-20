@@ -1,0 +1,63 @@
+<div class="row container full-bg-img-002" style="min-height: 500px">
+
+<div class="row" style="height: 125px"></div>
+
+<div class="container col-sm-6">
+  <div class="card hoverable" style="margin-bottom: 50px">
+    <div class="container col-sm-12">
+    <%= form_for :session, url: sessions_path do |f| %>
+        <h4 class="text-center">Welcome Back!</h4>
+        <p>Don't have an account? Sign up <%= link_to 'here', new_user_path %>.</p>
+        <!--
+        <div class="input-field">
+            <i class="material-icons prefix">person</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Your First Name</label>
+        </div>
+      -->
+
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+            <%= f.label "Email", for: "icon_prefix", class: 'label icon_prefix', style: 'margin-left: 10%' %>
+            <%= f.email_field :email, id: 'icon_prefix', class: 'validate input-field', style: 'margin-left: 10%' %>
+        </div> <!-- input-field -->
+
+        <div class="input-field">
+          <i class="material-icons prefix">vpn_key</i>
+            <%= f.label "Password", for: "icon_prefix", class: 'label icon_prefix', style: 'margin-left: 10%' %>
+            <%= f.password_field :password, id: 'icon_prefix', class: 'validate input-field', style: 'margin-left: 10%' %>
+        </div> <!-- input-field -->
+
+        <%= f.label :remember_me, class: 'checkbox' do %>
+          Remember Me <%= f.check_box :remember_me, :style => "margin-left: 10px;"  %>
+        <% end %>
+
+        <div class="text-center">
+          <%= f.submit "Let's Go!", class: 'btn btn-primary' %>
+        </div> <!-- text-center -->
+
+      <% end %> <!-- form end -->
+    </div> <!-- container inside -->
+  </div>  <!-- card panel end -->
+</div> <!-- column container -->
+
+<div class="row" style="height: 125px"> </div>
+
+</div> <!-- row -->
+
+<!--Section: Detailed info-->
+  <section id="sec-details"><div class="container">
+    <div class="divider-new text-center">The Next Level of Fitness</span></div>
+    <div class="row">
+        <!--First column-->
+        <div class="col-md-5 wow slideInUp" data-wow-delay="0.2s">
+            <h4>Unleash the Power of BurnIt</h4>
+            <hr>
+            <p>Take the first step towards your goals.  Want to run faster? Jump higher? Lose weight? Maybe just touch (or see) your toes? We're here to help.</p>
+            <br>
+            <p>Whether you work out at home, in the gym, or in the great outdoors, you'll get just what you need to kick your workouts up a notch. What's that you say, couch potatoes? No, we didn't forget about you. If you're a fitness newbie, we can help you build a solid fitness foundation from the ground up.</p>
+            <br>
+            <p>So c'mon, what are you waiting for? Let's get started.</p>
+        </div> <!-- column wow slideinup -->
+    </div> <!-- row -->
+  </div></section>

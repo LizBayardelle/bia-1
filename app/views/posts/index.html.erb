@@ -1,0 +1,23 @@
+<div class="row full-bg-img-0001">
+
+  <div class="row" style="height: 125px"></div>
+
+  <% if current_user != nil && current_user.admin? %>
+    <div class="text-center"><%= link_to 'New Blog Entry', new_post_path, class:"waves-effect waves-light btn btn-primary" %></div>
+  <% end %>
+  <p id="notice"><%= notice %></p>
+
+  <% @posts.each do |post| %>
+    <%= link_to post, style: "color: black" do %>
+      <div class="container col-xs-10 col-xs-push-1 col-md-8 col-md-push-2" style="margin-bottom: 50px">
+        <div class="card-panel hoverable" style="background-color: rgba(255, 255, 255, .95)">
+          <h4><%= post.title %></h4><hr>
+          <p><%= simple_format(post.teaser) %></p>
+          <p style="color: red">Read More...</p>
+          <!-- <p><strong><em>By: <%= post.user.first_name %></em></strong></p> -->
+        </div> <!-- card-panel hoverable -->
+      </div> <!-- containter -->
+    <% end %>  <!-- link -->
+  <% end %> <!-- each/do -->
+
+</div> <!-- page row w/ background -->

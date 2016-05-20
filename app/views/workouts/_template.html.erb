@@ -1,0 +1,22 @@
+<div class="container col-sm-6 col-md-4">
+  <div class="card hoverable">
+      <div class="card-image">
+          <div class="view overlay hm-white-slight z-depth-1">
+              <%#= link_to workout.workout_img class: "img-responsive" alt: "" %>
+              <div class="mask waves-effect"></div>
+          </div>
+          <h5 class="text-center" style="padding-top: 15px"><%= workout.name %></h5>
+      </div>
+      <div class="card-content">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/<%= workout.video %>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <div style="height: 200px">
+            <p><strong>Goal: </strong><%= workout.teaser %></p>
+            <p><strong>Description: </strong><%= workout.description %></p>
+            <p><strong>Workout Difficulty Level: </strong><%= workout.difficulty %></p>
+          </div>
+      </div>
+      <div class="card-action">
+          <%= link_to 'Do this one!', workout_path(workout), class: "red-text" %>
+      </div>
+  </div>
+</div>

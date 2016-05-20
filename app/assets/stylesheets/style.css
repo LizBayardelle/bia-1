@@ -1,0 +1,125 @@
+
+html,
+body {
+  height: 100%;
+}
+
+.top-nav-collapse {
+    background-color: #FFFFFF !important;
+}
+
+.homepage-btn-box {
+  float: right;
+}
+
+/* Extra small devices menu bar */
+@media only screen and (max-width: 768px) {
+  .homepage-btn-box {
+    float: none;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX PAGE */
+
+.stencil {
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
+.hero-000 {
+    width: 102%;
+    background: url(hero-000.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CONTENT IMAGES */
+.full-bg-img-0000 {
+    width: 102%;
+    background: url(bg-w-weights.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.full-bg-img-0001 {
+    width: 102%;
+    background: url(bg-w-weights.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.full-bg-img-001 {
+    width: 100%;
+    background: url(bg-l-kneel.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.full-bg-img-002 {
+    width: 100%;
+    background: url(bg-r-pushup.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.full-bg-img-003 {
+    width: 100%;
+    background: url(bg-r-tirepushup.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.full-bg-img-004 {
+    width: 100%;
+    background: url(bg-l-backmuscles.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.full-bg-img-005 {
+    width: 100%;
+    background: url(bg-r-tired.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

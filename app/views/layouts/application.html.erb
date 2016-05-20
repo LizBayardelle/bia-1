@@ -1,14 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Bia</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BurnIt Athletics</title>
+  <%= favicon_link_tag 'favicon.ico'%>
+  <%= analytics_init if GoogleAnalytics.valid_tracker? %>
+
+  <!-- Material Design Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <title>BurnIt Athletics</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'mdb.min' %>
+  <%= stylesheet_link_tag 'mdb.css' %>
+
+
 </head>
 <body>
+  <header>
+    <nav class="navbar  navbar-fixed-top z-depth-1" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" style="border: solid thin red; margin-top: 15px" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span style="background-color: red" class="icon-bar"></span>
+                        <span style="background-color: red" class="icon-bar"></span>
+                        <span style="background-color: red" class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand waves-effect waves-light pull-left" href="/"><%= image_tag 'Flame.png', style: "height: 100%"%></a>
+                </div> <!-- navbar-header -->
 
-<%= yield %>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                        <% if current_user && current_user.admin? %>
+                          <li><%= link_to 'Workouts', workouts_path,  class:"waves-effect waves-light" %></li>
+                        <% else %>
+                          <li><a href="#" class="waves-effect waves-light">Workouts <span class="sr-only">(current)</span></a></li>
+                        <% end %>
+                        <li><%= link_to 'Blog', posts_path, class:"waves-effect waves-light" %></li>
+                        <li><a href="#" class="waves-effect waves-light">Equipment</a></li>
+                        <li><a href="#" class="waves-effect waves-light">About Us</a></li>
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                      -->
+                    </ul>
+                </div> <!-- navbar collapse -->
+            </div> <!-- container-fluid -->
+            <div class="col-xs-12"><div class="homepage-btn-box" style="margin-top: 10px">
+              <% if current_user %>
+                <%= link_to "My Workouts", user_path(current_user), class: 'btn btn-primary', style: 'z-index: 100; margin-top: -70px; margin-bottom: margin-right: 50px' %>
+              <% else %>
+                <div class="row"><%= link_to "Sign In", new_session_path, class: 'btn btn-primary', style: 'z-index: 100; margin-top: -80px; margin-right: 50px'%></div>
+                <div class="row" style="margin-top: -30px"><p class="pull-right" style="font-size: 12px; margin-right: 55px">Or Sign Up <%= link_to 'Here', new_user_path %></p></div>
+              <% end %>
+            </div> <!-- pull right login status --></div>
+        </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+
+  <footer class="page-footer center-on-small-only">
+    <div class="container-fluid">
+        <div class="row">
+          <hr class="col-xs-10 col-xs-push-1"><br>
+
+          <div class="col-sm-3">
+              <h5 class="black-text">Want More?</h5>
+              <ul>
+                  <li><a class="black-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">YouTube</a></li>
+              </ul>
+          </div>
+
+            <div class="col-sm-9">
+                <h5 class="black-text">The BurnIt Credo</h5>
+                <p class="black-text text-lighten-4">Two of our fundamental human desires are to better ourselves and to get more information.  The gym does the first, the internet does the second.<br>Isn't it time the two joined forces?</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-copyright text-center black-text white">
+        <div class="container-fluid black-text">
+            © 2016 Copyright: <a href="http://www.burnitathletics.com" class="red-text"> BurnIt Athletics </a>
+        </div>
+    </div>
+  </footer>
+
 
 </body>
 </html>

@@ -1,0 +1,61 @@
+
+
+<div class="row container full-bg-img-003" style="min-height: 500px">
+
+<div class="row" style="height: 150px"></div>
+
+  <div class="container col-sm-6 col-sm-push-6">
+    <div class="card hoverable" style="margin-bottom: 50px">
+      <div class="container col-sm-12">
+        <h4 class="text-center"><%= current_user.first_name %>'s Profile</h4>
+        <div class="text-center">
+          <%# if current_user.avatar != nil %>
+            <%#= image_tag @user.avatar.url(:thumb) %>
+          <%# else %>
+            <p>Looks a little impersonal...<br>Wanna upload a profile picture:</p>
+              <%#= form_for @user, url: user_path, html: { multipart: true } do |form| %>
+                <%#= form.file_field :avatar %>
+                <%#= form.submit "Upload Picture", class: "btn btn-primary" %>
+              <%# end %>
+            <%# end %>
+        </div> <!-- text-center avatar box -->
+        <div class="text-center"><%= link_to 'Sign Out', session_path(current_user), method: :delete, class: 'btn btn-primary' %></div>
+
+      </div> <!-- container inside -->
+    </div>  <!-- card panel end -->
+  </div> <!-- column container -->
+
+<div class="row" style="height: 125px"> </div>
+
+</div> <!-- row -->
+
+<!--Section: Detailed info-->
+  <section id="sec-details"><div class="container">
+    <div class="row">
+      <h2 class="text-center"><%= current_user.first_name %>'s Workouts</h2><hr>
+      <!-- render cards here -->
+
+      <!-- end video workout cards -->
+        <!--Image Card-->
+        <div class="container col-sm-6 col-md-4">
+        <div class="card hoverable">
+            <div class="card-image">
+                <div class="view overlay hm-white-slight z-depth-1">
+                    <img src="http://mdbootstrap.com/images/reg/reg%20(2).jpg" class="img-responsive" alt="">
+                    <div class="mask waves-effect"></div>
+                </div>
+                <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.</p>
+            </div>
+            <div class="card-action">
+                <a>This is a link</a>
+            </div>
+        </div>
+      </div>
+        <!--Image Card-->
+
+    </div> <!-- row -->
+  </div> <!-- container -->
+  </section>

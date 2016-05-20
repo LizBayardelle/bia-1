@@ -1,0 +1,52 @@
+
+<!-- fix img link -->
+<%#= link_to workout.workout_img class: "img-responsive" alt: "" %>
+
+<div class="row container full-bg-img-003" style="min-height: 500px">
+
+<div class="row" style="height: 125px"></div>
+
+<% if current_user != nil && current_user.admin? %>
+  <div class="text-center"><%= link_to 'Back to Workouts Index', workouts_path, class:"waves-effect waves-light btn btn-primary" %></div>
+<% else %>
+  <div class="text-center"><%= link_to 'Back to My Workouts', user_path, class:"waves-effect waves-light btn btn-primary" %></div>
+<% end %>
+
+<div class="row" style="height: 25px"></div>
+
+  <div class="container col-sm-6 col-sm-push-6 col-lg-4 col-lg-push-8">
+    <div class="card hoverable" style="margin-bottom: 50px; background-color: rgba(255, 255, 255, .85), height: 400px">
+      <div class="container col-sm-12">
+        <h4 class="text-center"><%= @workout.name%></h4>
+        <p><strong>Workout Type: </strong><%= @workout.workout_type %></p>
+        <p><strong>Goal: </strong><%= @workout.teaser %></p>
+        <p><strong>Description: </strong><%= @workout.description %></p>
+        <p><strong>Workout Difficulty Level: </strong><%= @workout.difficulty %></p>
+        <% if current_user.admin? %>
+          <div class="text-center" style="padding-bottom: 20px">
+            <%= link_to "Edit Workout", edit_workout_path %> | <%= link_to "Delete Workout", @workout, method: :delete, data: { confirm: 'Are you sure you want to delete this workout?' } %>
+          </div> <!-- text-center for buttons -->
+        <% end %>
+      </div> <!-- container inside -->
+    </div>  <!-- card panel end -->
+  </div> <!-- column container -->
+
+<div class="row" style="height: 125px"> </div>
+
+</div> <!-- row -->
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="divider-new text-center">The Workout</span></div>
+        <!-- video here -->
+        <iframe width="100%" height="450" src="https://www.youtube.com/embed/<%= @workout.video %>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        <!-- end video  -->
+      <div class="divider-new text-center">The Report</span></div>
+      <!-- Exercise Record -->
+      <p>Looks like you get a freebie for this one!  No score report today.  Rest up and drink some water.  It ain't always that easy...</p>
+      <!-- Exercise Record -->
+
+    </div> <!-- row -->
+  </div> <!-- container -->
+</section>
