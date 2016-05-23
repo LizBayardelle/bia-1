@@ -41,7 +41,7 @@ body {
 
 .hero-000 {
     width: 102%;
-    background: asset-data-url("hero-000.jpg") no-repeat center center fixed;
+    background: url(asset-path("hero-000.jpg")) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
