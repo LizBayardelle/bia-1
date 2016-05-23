@@ -1,5 +1,6 @@
 class Exercise < ActiveRecord::Base
   belongs_to :workout
   belongs_to :user
-  include Bootsy::Container
+  has_many :reports
+  validates :user, presence: true
 end

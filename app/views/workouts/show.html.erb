@@ -35,6 +35,9 @@
 
 </div> <!-- row -->
 
+
+<!-- THE WORKOUT ITSELF -->
+
 <section>
   <div class="container">
     <div class="row">
@@ -42,10 +45,44 @@
         <!-- video here -->
         <iframe width="100%" height="450" src="https://www.youtube.com/embed/<%= @workout.video %>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
         <!-- end video  -->
-      <div class="divider-new text-center">The Report</span></div>
-      <!-- Exercise Record -->
-      <p>Looks like you get a freebie for this one!  No score report today.  Rest up and drink some water.  It ain't always that easy...</p>
-      <!-- Exercise Record -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</section>
+
+<!-- IF ADMIN => ADD EXERCISES, IF USER => REPORT SCORES -->
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="divider-new text-center">Report Your Scores</span></div>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <% if @workout.exercises.count == 0 %>
+        <p>Looks like you get a freebie for this one!  No score report today.  Rest up and drink some water.  It ain't always that easy...</p>
+      <% else %>
+        <% @workout.exercises.each do |exercise| %>
+        <%# if exercise.reports.last != nil && exercise.reports.last.created_at < ( DateTime.now - (1/24.0)) %>
+          <%= render 'reports/form', report: @report, exercise: exercise %>
+          <% if current_user.admin? %>
+            <div class="text-center"><%= link_to "Delete #{exercise.name}", [exercise], method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <% end %>
+          <hr>
+        <%# end %>
+        <% end %>
+
+
+          <h4>Your Previous Results<h4>
+          <% @workout.exercises.each do |exercise| %>
+            <h5><%= exercise.name %></h5>
+            <%= render exercise.reports, report: @report, exercise: exercise %>
+            <% end %>
+        <% end %>
+
+      <% if current_user.admin? %>
+        <%= render 'exercises/form' %>
+      <% end %>
 
     </div> <!-- row -->
   </div> <!-- container -->

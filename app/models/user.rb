@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   include FriendlyId
 
   friendly_id :first_name, :use => :slugged
@@ -21,6 +25,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :workouts
   has_many :exercises
+  has_many :reports
 
   has_secure_password
 

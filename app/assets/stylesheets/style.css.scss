@@ -41,7 +41,7 @@ body {
 
 .hero-000 {
     width: 102%;
-    background: url(hero-000.jpg) no-repeat center center fixed;
+    background: asset-url("hero-000.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -122,4 +122,39 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+
+
+
+
+/* BOOTSY */
+.wysihtml5-toolbar .btn-default {
+  background: red;
+}
+
+.wysihtml5-toolbar .btn-default:hover {
+  background: black !important ;
+}
+
+.wysihtml5-toolbar .btn-default:active {
+  background: black !important ;
+}
+
+.wysihtml5-toolbar .btn {
+  margin: 5px;
+  height: 40px;
+}
+
+
+
+
+
+
+
+
+
+/* CONTENT */
+.check_box {
+  margin-right: 40px;
 }

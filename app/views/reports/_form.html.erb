@@ -1,0 +1,31 @@
+<%= form_for report,
+  :url => { :controller => "reports",
+  :action => :create,
+  :exercise_id => exercise.id } do |f| %>
+<div class="row">
+<div class="col-xs-10 col-xs-push-1">
+  <p>Enter Your Results for <strong><%= exercise.name %></strong>:</p>
+  <div class="row">
+  <% if exercise.needs_reps == "1" %>
+    <div class="form-group col-xs-3">
+      <%= f.label :reps %>
+      <%= f.number_field :reps, class: 'form-control' %>
+    </div>
+  <% end %>
+  <% if exercise.needs_seconds == "1" %>
+    <div class="form-group col-xs-3">
+      <%= f.label :seconds%>
+      <%= f.number_field :seconds, class: 'form-control' %>
+    </div>
+  <% end %>
+  <% if exercise.needs_weight == "1" %>
+    <div class="form-group col-xs-3">
+      <%= f.label :weight %>
+      <%= f.number_field :weight, class: 'form-control' %>
+    </div>
+  <% end %>
+  <div class="text-right"><%= f.submit "Record Results", class: 'btn btn-primary' %></div>
+<% end %>
+</div> <!-- row -->
+</div>
+</div>

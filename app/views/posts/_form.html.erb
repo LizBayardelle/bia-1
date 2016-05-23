@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.bootsy_area :body, style: "min-height: 300px" %>
+    <%= f.bootsy_area :body, style: "min-height: 300px", editor_options: { blockquote: false, color: false, image: false } %>
   </div>
   <div class="actions text-center">
     <%= f.submit class: "btn btn-primary" %>

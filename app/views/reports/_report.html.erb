@@ -1,0 +1,33 @@
+<div class="media">
+  <div class="media-body">
+
+    <p>
+      <strong><% if report.reps != nil %>
+        <%= report.reps %></strong> Reps of
+      <% end %>
+
+      <%= exercise.name %>
+
+      <% if report.seconds != nil %>
+        for <strong><%= report.seconds %></strong> Seconds
+      <% end %>
+
+      <% if report.weight != nil %>
+        at <strong><%= report.weight %></strong> Pounds
+      <% end %>
+
+      <small>
+        (<%= time_ago_in_words(report.created_at) %> ago |
+
+        <% if user_signed_in? %>
+            <% if current_user.admin? || current_user = @workout.user %>
+              <%= link_to 'Edit', [report], method: :patch %> |
+              <%= link_to 'Delete', [report], method: :delete %> )
+            <% end %>
+        <% end %>
+
+      </small>
+
+    </p>
+  </div>
+</div>

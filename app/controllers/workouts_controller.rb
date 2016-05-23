@@ -5,22 +5,18 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
+    @exercise = Exercise.new
+    @report = Report.new
   end
 
   def new
     @workout = Workout.new
+    @workout.user_id = current_user
   end
 
   def create
-    @workout = Workout.new
-    @workout.name = params[:workout][:name]
-    @workout.workout_type = params[:workout][:workout_type]
-    @workout.teaser = params[:workout][:teaser]
-    @workout.description = params[:workout][:description]
-    @workout.video = params[:workout][:video]
-    @workout.difficulty = params[:workout][:difficulty]
-    @workout.trainer = params[:workout][:trainer]
-    @workout.user_id = params[:workout][:user_id]
+    @workout = Workout.new(workout_params)
+    @workout.user = current_user
 
     if @workout.save
       flash[:notice] = "Workout was saved successfully."
@@ -66,5 +62,10 @@ class WorkoutsController < ApplicationController
       flash.now[:alert] = "There was an error deleting the workout."
       render :show
     end
+  end
+
+  private
+  def workout_params
+    params.require(:workout).permit(:name, :workout_type, :teaser, :description, :video, :difficulty, :trainer, :user_id)
   end
 end

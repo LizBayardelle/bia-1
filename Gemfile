@@ -9,6 +9,8 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'binding_of_caller'
+  gem 'better_errors'
 end
 
 gem 'sass-rails', '~> 5.0'
@@ -23,3 +25,4 @@ gem 'google-analytics-rails', '1.1.0'
 gem 'paperclip'
 gem 'meta-tags'
 gem 'bootsy'
+gem 'devise'
