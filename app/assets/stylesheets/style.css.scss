@@ -41,7 +41,7 @@ body {
 
 .hero-000 {
     width: 102%;
-    background: asset-url("images/hero-000.jpg") no-repeat center center fixed;
+    background: asset-data-url("hero-000.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -63,7 +63,7 @@ body {
 /* CONTENT IMAGES */
 .full-bg-img-0000 {
     width: 102%;
-    background: url(bg-w-weights.jpg) no-repeat center center fixed;
+    background: url("bg-w-weights.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -72,7 +72,7 @@ body {
 
 .full-bg-img-0001 {
     width: 102%;
-    background: url(bg-w-weights.jpg) no-repeat center center fixed;
+    background: url("bg-w-weights.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -81,7 +81,7 @@ body {
 
 .full-bg-img-001 {
     width: 100%;
-    background: url(bg-l-kneel.jpg) no-repeat center center fixed;
+    background: url("bg-l-kneel.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -90,7 +90,7 @@ body {
 
 .full-bg-img-002 {
     width: 100%;
-    background: url(bg-r-pushup.jpg) no-repeat center center fixed;
+    background: url("bg-r-pushup.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -99,7 +99,7 @@ body {
 
 .full-bg-img-003 {
     width: 100%;
-    background: url(bg-r-tirepushup.jpg) no-repeat center center fixed;
+    background: url("bg-r-tirepushup.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -108,7 +108,7 @@ body {
 
 .full-bg-img-004 {
     width: 100%;
-    background: url(bg-l-backmuscles.jpg) no-repeat center center fixed;
+    background: url("bg-l-backmuscles.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -117,7 +117,7 @@ body {
 
 .full-bg-img-005 {
     width: 100%;
-    background: url(bg-r-tired.jpg) no-repeat center center fixed;
+    background: url("bg-r-tired.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
