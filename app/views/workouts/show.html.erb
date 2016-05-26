@@ -66,7 +66,7 @@
         <%# if exercise.reports.last != nil && exercise.reports.last.created_at < ( DateTime.now - (1/24.0)) %>
           <%= render 'reports/form', report: @report, exercise: exercise %>
           <% if current_user.admin? %>
-            <div class="text-center"><%= link_to "Delete #{exercise.name}", [exercise], method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <div class="text-center"><%= link_to "Delete #{exercise.name}", exercise_path, method: :delete, data: { confirm: 'Are you sure?' } %></div>
           <% end %>
           <hr>
         <%# end %>

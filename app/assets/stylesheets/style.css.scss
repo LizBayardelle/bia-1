@@ -41,8 +41,7 @@ body {
 
 .hero-000 {
     width: 102%;
-    background: url(asset-path("hero-000.jpg")) no-repeat center center fixed;
-    -webkit-background-size: cover;
+    background: url("https://herokuapp.com/assets/stylesheet/hero-000.jpg") no-repeat center center fixed;    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
