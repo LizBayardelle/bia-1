@@ -3,7 +3,7 @@ Rails.application.configure do
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
   config.assets.compile = true
   config.assets.digest = true
-  # config.BASE_URL = 'https://herokuapp.com/'
+  config.BASE_URL = 'https://herokuapp.com/'
 
 
   # Settings specified here will take precedence over those in config/application.rb.
