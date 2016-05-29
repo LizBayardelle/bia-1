@@ -39,10 +39,12 @@ body {
   font-family: 'Allerta Stencil', sans-serif;
 }
 
-.hero-000 {
-    width: 102%;
-    background: url("hero-000-d323633eb428852daedbdbce4ee5fd6d4710cd148f340f3ca1055bd33f116afb.jpg") no-repeat center center fixed;    -o-background-size: cover;
-    background-size: cover;
+.main-image {
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -60,7 +62,7 @@ body {
 /* CONTENT IMAGES */
 .full-bg-img-0000 {
     width: 102%;
-    background: url("bg-w-weights.jpg") no-repeat center center fixed;
+    background: url("public/assets/bg-w-weights-2f594b615d50e5b4cf1ed984b834ca78b6c29e74afbcbf76c66cbdf4d3eb0108.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
