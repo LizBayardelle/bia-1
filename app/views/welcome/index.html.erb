@@ -1,50 +1,70 @@
-<div class="row text-center">
+<div class="row text-center bg-wrapper-div">
   <%= image_tag 'bg-hero-000.jpg', class: "main-image" %>
 </div>
 
-<div class="row" style="height: 120px"></div>
+<div class="row" style="height: 80px"></div>
 
-<div class="container col-sm-10 col-sm-push-1">
-    <div class="container col-sm-12">
-      <h2 class="white-text stencil text-center">Professionally<br>Designed Workouts</h2>
-      <div class="row" style="height: 230px"></div>
-      <h5 class="white-text text-center">Custom.&nbspInstant.&nbspEffective. Bring&nbspthe&nbspgym&nbspto&nbspyou.</h5>
-    </div> <!-- container inside -->
-</div> <!-- column container -->
-
-<div class="row" style="height: 125px"> </div>
+  <div class="container col-sm-10 col-sm-push-1">
+      <div class="container col-sm-12">
+        <h2 class="white-text stencil text-center">Professionally<br>Designed Workouts</h2>
+        <div class="row" style="height: 200px"></div>
+        <h5 class="white-text text-center">Custom.&nbspInstant.&nbspEffective. Bring&nbspthe&nbspgym&nbspto&nbspyou.</h5>
+      </div> <!-- container inside -->
+  </div> <!-- column container -->
 
 </div> <!-- row -->
 
+<div class="row" style="height: 125px !important"></div>
 
 
-<div class="container">
-     <div class="row">
-       <div class="row" style="height: 50px"></div>
-         <div class="col-sm-6">
 
-               <% if current_user && current_user.admin? %>
-                 <%= link_to workouts_path, style: "color: black !important" do %>
-                    <!--Image Card-->
-                     <div class="card hoverable">
-                         <div class="card-image">
-                             <div class="view overlay hm-white-slight z-depth-1">
-                                 <%= image_tag 'card-workouts.jpg', class: "img-responsive", alt: "woman lifting weights" %>
-                                 <div class="mask waves-effect"></div>
-                             </div>
-                             <span class="card-title">Workout Generator</span>
-                         </div>
-                         <div class="card-content">
-                             <p>Want a professionally designed workout without a sweaty, tatooed man yelling tropisms over your shoulder? Us too. Tell us your goals, we'll give you a professionally-designed workout without the, erm, "professional". </p>
-                         </div>
-                         <div class="card-action">
-                             <a class="red-text">Access the stockpile!</a>
-                         </div>
-                     </div>
-                     <!--Image Card-->
-                   <% end %>
-               <% elsif current_user %>
-                 <%= link_to user_path(current_user), style: "color: black !important" do %>
+ <div class="row white-row">
+   <div class="container">
+     <div class="row" style="height: 50px"></div>
+       <div class="col-sm-6">
+
+             <% if current_user && current_user.admin? %>
+               <%= link_to workouts_path, style: "color: black !important" do %>
+                  <!--Image Card-->
+                   <div class="card hoverable">
+                       <div class="card-image">
+                           <div class="view overlay hm-white-slight z-depth-1">
+                               <%= image_tag 'card-workouts.jpg', class: "img-responsive", alt: "woman lifting weights" %>
+                               <div class="mask waves-effect"></div>
+                           </div>
+                           <span class="card-title">Workout Generator</span>
+                       </div>
+                       <div class="card-content">
+                           <p>Want a professionally designed workout without a sweaty, tatooed man yelling tropisms over your shoulder? Us too. Tell us your goals, we'll give you a professionally-designed workout without the, erm, "professional". </p>
+                       </div>
+                       <div class="card-action">
+                           <a class="red-text">Access the stockpile!</a>
+                       </div>
+                   </div>
+                   <!--Image Card-->
+                 <% end %>
+             <% elsif current_user %>
+               <%= link_to user_path(current_user), style: "color: black !important" do %>
+                  <!--Image Card-->
+                   <div class="card hoverable">
+                       <div class="card-image">
+                           <div class="view overlay hm-white-slight z-depth-1">
+                               <%= image_tag 'card-workouts.jpg', class: "img-responsive", alt: "woman lifting weights" %>
+                               <div class="mask waves-effect"></div>
+                           </div>
+                           <span class="card-title">Workout Generator</span>
+                       </div>
+                       <div class="card-content">
+                           <p>Want a professionally designed workout without a sweaty, tatooed man yelling tropisms over your shoulder? Us too. Tell us your goals, we'll give you a professionally-designed workout without the, erm, "professional". </p>
+                       </div>
+                       <div class="card-action">
+                           <a class="red-text">Let's get it started!</a>
+                       </div>
+                   </div>
+                   <!--Image Card-->
+                 <% end %>
+              <% else %>
+                 <%= link_to new_user_path, style: "color: black !important" do %>
                     <!--Image Card-->
                      <div class="card hoverable">
                          <div class="card-image">
@@ -63,49 +83,29 @@
                      </div>
                      <!--Image Card-->
                    <% end %>
-                <% else %>
-                   <%= link_to new_user_path, style: "color: black !important" do %>
-                      <!--Image Card-->
-                       <div class="card hoverable">
-                           <div class="card-image">
-                               <div class="view overlay hm-white-slight z-depth-1">
-                                   <%= image_tag 'card-workouts.jpg', class: "img-responsive", alt: "woman lifting weights" %>
-                                   <div class="mask waves-effect"></div>
-                               </div>
-                               <span class="card-title">Workout Generator</span>
-                           </div>
-                           <div class="card-content">
-                               <p>Want a professionally designed workout without a sweaty, tatooed man yelling tropisms over your shoulder? Us too. Tell us your goals, we'll give you a professionally-designed workout without the, erm, "professional". </p>
-                           </div>
-                           <div class="card-action">
-                               <a class="red-text">Let's get it started!</a>
-                           </div>
-                       </div>
-                       <!--Image Card-->
-                     <% end %>
-               <% end %>
-           </div> <!-- class for half size -->
+             <% end %>
+         </div> <!-- class for half size -->
 
-           <div class="col-sm-6">
-               <!--Image Card-->
-               <%= link_to posts_path, style: "color: black !important" do %>
-               <div class="card hoverable">
-                   <div class="card-image">
-                       <div class="view overlay hm-white-slight z-depth-1">
-                           <%= image_tag 'card-blog.jpg', class: "img-responsive", alt: "apple, calendar, meausuring tape, and water bottle" %>
-                           <div class="mask waves-effect"></div>
-                       </div>
-                       <span class="card-title">BurnIt Blog</span>
-                   </div>
-                   <div class="card-content">
-                       <p>Usually a personal trainer gets to impart their words of wisdom in person while you cool down and try to forget the pain they just inflicted. When you go to an online gym, you have to get your life-changing ideas from the blog.</p>
-                   </div>
-                   <div class="card-action">
-                       <%= link_to "Check it out now!", posts_path, class: "red-text" %>
-                   </div>
-               </div>
-               <% end %>
-               <!--Image Card-->
-           </div> <!-- class for half size -->
-     </div> <!-- row -->
- </div> <!-- cards section container -->
+         <div class="col-sm-6">
+             <!--Image Card-->
+             <%= link_to posts_path, style: "color: black !important" do %>
+             <div class="card hoverable">
+                 <div class="card-image">
+                     <div class="view overlay hm-white-slight z-depth-1">
+                         <%= image_tag 'card-blog.jpg', class: "img-responsive", alt: "apple, calendar, meausuring tape, and water bottle" %>
+                         <div class="mask waves-effect"></div>
+                     </div>
+                     <span class="card-title">BurnIt Blog</span>
+                 </div>
+                 <div class="card-content">
+                     <p>Usually a personal trainer gets to impart their words of wisdom in person while you cool down and try to forget the pain they just inflicted. When you go to an online gym, you have to get your life-changing ideas from the blog.</p>
+                 </div>
+                 <div class="card-action">
+                     <%= link_to "Check it out now!", posts_path, class: "red-text" %>
+                 </div>
+             </div>
+             <% end %>
+             <!--Image Card-->
+         </div> <!-- class for half size -->
+   </div> <!-- cards section container -->
+</div> <!-- row -->
