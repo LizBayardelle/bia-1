@@ -1,9 +1,8 @@
 /*
  *= require_tree .
  *= require_self
+ *= require bootsy
 */
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootsy";
-@import "*";

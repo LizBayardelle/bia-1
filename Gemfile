@@ -16,10 +16,12 @@ end
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt', '~> 3.1.7'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'google-analytics-rails', '1.1.0'
 gem 'paperclip'
 gem 'meta-tags'
 gem 'bootsy'
 gem 'devise'
+
